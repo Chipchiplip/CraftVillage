@@ -1,0 +1,66 @@
+# Compiled class files
+*.class
+
+# Build directories
+build/
+target/
+dist/
+out/
+
+# NetBeans specific
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# IDE specific
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Database config files with sensitive data
+src/java/context/DBContext.java
+
+# Local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Application specific
+/lib/
+/test-lib/junit-jupiter-api-5.10.0.jar
+
+# Cache files
+.cache/

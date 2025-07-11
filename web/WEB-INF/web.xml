@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+
+    <!--
+    ================================================================
+    Web Application Configuration
+    This deployment descriptor contains only essential configurations.
+    Controllers use @WebServlet annotations for URL mappings.
+    ================================================================
+    -->
+
+    <!--
+    ================================================================
+    SESSION CONFIGURATION
+    Defines the session timeout for the application.
+    ================================================================
+    -->
+    <session-config>
+        <session-timeout>30</session-timeout> <!-- 30 minutes -->
+    </session-config>
+
+    <!--
+    ================================================================
+    APPLICATION LISTENERS - TEMPORARILY DISABLED FOR DEBUGGING
+    Listeners for session lifecycle events.
+    ================================================================
+    -->
+    <!-- COMMENTED OUT TO TEST IF THESE ARE CAUSING HANG
+    <listener>
+        <listener-class>listener.SessionCounterListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>listener.SessionListener</listener-class>
+    </listener>
+    -->
+
+    <!--
+    ================================================================
+    FILTERS
+    Filters for intercepting requests, e.g., for logging or auth.
+    ================================================================
+    -->
+    <filter>
+        <filter-name>LoggingFilter</filter-name>
+        <filter-class>filter.LoggingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoggingFilter</filter-name>
+        <url-pattern>/manager</url-pattern>
+        <url-pattern>/managerAccount</url-pattern>
+    </filter-mapping>
+
+    <!--
+    ================================================================
+    WELCOME FILE
+    The default page to show when the root URL is requested.
+    This will be handled by the HomeControl servlet (via @WebServlet annotation).
+    ================================================================
+    -->
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
+
+</web-app>
